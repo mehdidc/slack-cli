@@ -3,15 +3,12 @@
 [![versioning](http://img.shields.io/badge/versioning-semver-blue.svg)](http://semver.org/)
 [![branching](http://img.shields.io/badge/branching-github%20flow-blue.svg)](https://guides.github.com/introduction/flow/)
 [![license](http://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
-[![pm](http://img.shields.io/badge/pm-zenhub-blue.svg)](https://www.zenhub.io/)
-[![chat](http://img.shields.io/badge/chat-slack-blue.svg)](https://rockymadden-slack.herokuapp.com/)
 [![circleci](https://circleci.com/gh/rockymadden/slack-cli.svg?style=shield)](https://circleci.com/gh/rockymadden/slack-cli)
 
-A pure bash, pipe friendly, feature rich, command line interface for Slack. Richly formatted
-messages are a first class concept, helping you send
-[beautiful messages](https://api.slack.com/docs/message-formatting) with ease. Deep integration
-with [jq](https://github.com/stedolan/jq) allows for the ability to perform advanced operations
-upon JSON responses, helping you perform complex queries and pipe chaining with ease.
+A pure bash, pipe friendly, feature rich, command line interface for Slack. Richly formatted messages are a first class
+concept, helping you send [beautiful messages](https://api.slack.com/docs/message-formatting) with ease. Deep
+integration with [jq](https://github.com/stedolan/jq) allows for the ability to perform advanced operations upon JSON
+responses, helping you perform complex queries and pipe chaining with ease.
 
 __Basic message example:__
 
@@ -77,8 +74,7 @@ $ make install bindir=/path/to/bin etcdir=/path/to/etc
 
 ## Configuration
 
-Ensure you have a [Slack API token](https://api.slack.com/web) and use said token one of the
-following ways:
+Ensure you have a [Slack API token](https://api.slack.com/web) and use said token one of the following ways:
 
 ### Via `init`:
 
