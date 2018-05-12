@@ -91,7 +91,7 @@ while (( "$#" )); do
     --user=*) user=${1/--user=/''} ; shift ;;
     --user|-ur*) user=${2} ; shift ; shift ;;
     *)
-      case "${cmd}${sub}" in
+    case "${cmd}${sub}" in
         chatdelete)
           [ -n "${1}" ] && [ -n "${timestamp}" ] && [ -z "${channel}" ] && channel=${1}
           [ -n "${1}" ] && [ -z "${timestamp}" ] && timestamp=${1}
@@ -241,7 +241,7 @@ function chatdelete() {
   local msg=$(\
     curl -s -X POST https://slack.com/api/chat.delete \
       --data-urlencode "as_user=true" \
-      --data-urlencode "channel=$(lchannel)" \
+      --data-urlencode "channel=$channel" \
       --data-urlencode "ts=${timestamp}" \
       --data-urlencode "token=${token}")
 
@@ -250,12 +250,11 @@ function chatdelete() {
 
 function chatsend() {
   [ -n "${stdin}" ] && [ -z "${text}" ] && text=\`\`\`${stdin//$'\n'/'\n'}\`\`\`
-
   local msg=$(\
     curl -s -X POST https://slack.com/api/chat.postMessage \
       --data-urlencode "as_user=true" \
       --data-urlencode "attachments=$(attachify)" \
-      --data-urlencode "channel=$(lchannel)" \
+      --data-urlencode "channel=$channel" \
       --data-urlencode "token=${token}")
 
   jqify "${msg}"
